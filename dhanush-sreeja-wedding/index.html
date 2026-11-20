@@ -127,6 +127,24 @@ body.opened .door-screen{opacity:0;visibility:hidden;pointer-events:none}
 @keyframes artSway{0%,100%{transform:rotate(-.7deg)}50%{transform:rotate(.7deg)}}
 @keyframes ringFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
 @media(prefers-reduced-motion:reduce){.floral-arch,.ring-art,.footer-art{animation:none;opacity:.9}}
+
+/* Traditional wedding palki procession */
+.palki-scene{width:min(100%,680px);margin:22px auto 12px;overflow:hidden;color:#e5c77e;animation:artReveal 1.7s ease both}
+.palki-scene svg{display:block;width:100%;height:auto;overflow:visible;filter:drop-shadow(0 3px 6px #00191c66)}
+.palki-walk{animation:palkiBob 1.25s ease-in-out infinite}
+.palki-walk.delay{animation-delay:-.62s}
+.palki-leg{transform-box:fill-box;transform-origin:top center;animation:walkLeg .7s ease-in-out infinite alternate}
+.palki-leg.alt{animation-delay:-.35s}
+.palki-drumstick{transform-box:fill-box;transform-origin:top center;animation:drumBeat .42s ease-in-out infinite alternate}
+.palki-flute{transform-box:fill-box;transform-origin:left center;animation:fluteLift 1.8s ease-in-out infinite}
+.palki-bell{transform-box:fill-box;transform-origin:top center;animation:bellSwing 1.1s ease-in-out infinite alternate}
+@keyframes palkiBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes walkLeg{from{transform:rotate(-13deg)}to{transform:rotate(13deg)}}
+@keyframes drumBeat{from{transform:rotate(-22deg)}to{transform:rotate(25deg)}}
+@keyframes fluteLift{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(3deg)}}
+@keyframes bellSwing{from{transform:rotate(-12deg)}to{transform:rotate(12deg)}}
+@media(max-width:560px){.palki-scene{width:108%;margin:16px -4% 8px}.palki-scene svg{min-width:0}}
+@media(prefers-reduced-motion:reduce){.palki-scene,.palki-walk,.palki-leg,.palki-drumstick,.palki-flute,.palki-bell{animation:none}}
 </style></head>
 <body>
 <div class="gold-rain" id="goldRain" aria-hidden="true"></div>
@@ -162,7 +180,59 @@ body.opened .door-screen{opacity:0;visibility:hidden;pointer-events:none}
 <div class="with">with</div>
 <div class="person-name"><div class="name-prefix">Chi. La Sow.</div><div class="couple-names">K. Sreeja</div><div class="qualification">B.Sc., Nursing</div></div>
 <div class="with">Daughter of</div><div class="bride-parents">Smt. K. Shivamma &amp; Sri K. Chanakeshava</div>
-<div class="wedding-art ring-art" aria-hidden="true"><svg viewBox="0 0 220 86" width="220" xmlns="http://www.w3.org/2000/svg" fill="none"><circle cx="91" cy="43" r="26" stroke="#d8b56a" stroke-width="5"/><circle cx="129" cy="43" r="26" stroke="#f0dca7" stroke-width="5"/><path d="M110 10l4 7 8 1-6 6 1 8-7-4-7 4 1-8-6-6 8-1 4-7z" fill="#d8b56a"/><path d="M34 43h17m118 0h17" stroke="#d8b56a" stroke-width="1.5" stroke-linecap="round"/><path d="M26 35q8 8 0 16m168-16q-8 8 0 16" stroke="#d8b56a" stroke-width="1.2"/></svg></div><div class="events">
+<div class="palki-scene" role="img" aria-label="A traditional Indian wedding procession with a decorated palki, bearers, drummers and shehnai players">
+<svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" fill="none">
+<defs><linearGradient id="palkiGold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f6e4ad"/><stop offset=".55" stop-color="#d8b56a"/><stop offset="1" stop-color="#9c7137"/></linearGradient></defs>
+<path d="M28 224Q360 214 692 224" stroke="#d8b56a" stroke-width="1.5" opacity=".65"/>
+<g stroke="#d8b56a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<!-- left musician: shehnai / peepi -->
+<g transform="translate(54 88)">
+<circle cx="27" cy="19" r="13" fill="#d8b56a"/><path d="M14 17q13-18 26 0" stroke="#f7e7bd" stroke-width="3"/><path d="M27 32v48m0-31-18 18m18-17 18 15" stroke-width="5"/>
+<path d="M27 80 14 119m13-39 17 39" stroke-width="5" class="palki-leg"/><path d="M10 120h-3m37 0h9" stroke-width="4"/>
+<g class="palki-flute"><path d="M35 47l55-15 5 7-56 15" stroke="#f3d58d" stroke-width="5"/><path d="M59 39l2 7m10-10 2 7m10-10 2 7" stroke="#8d6737" stroke-width="2"/></g>
+<path d="M24 45q-12 8-10 19m13-19q12 8 13 19" stroke="#d8b56a"/>
+</g>
+<!-- right drummer -->
+<g transform="translate(607 88)">
+<circle cx="28" cy="19" r="13" fill="#d8b56a"/><path d="M15 16q13-17 26 0" stroke="#f7e7bd" stroke-width="3"/><path d="M28 32v47m0-29-18 17m18-17 19 12" stroke-width="5"/>
+<path d="M28 79 15 119m13-40 17 40" stroke-width="5"/><path d="M9 120H5m41 0h6" stroke-width="4"/>
+<ellipse cx="30" cy="67" rx="23" ry="14" fill="#0b4142" stroke="#e2c27a" stroke-width="3"/><path d="M8 67q22-12 44 0m-44 0q22 12 44 0" stroke="#f3d58d" stroke-width="1.5"/>
+<g class="palki-drumstick"><path d="M9 44 22 61" stroke="#f5e4b8" stroke-width="3"/></g><g class="palki-drumstick"><path d="M51 43 39 61" stroke="#f5e4b8" stroke-width="3"/></g>
+</g>
+<!-- bearers -->
+<g class="palki-walk" transform="translate(165 0)">
+<circle cx="22" cy="93" r="13" fill="#d8b56a"/><path d="M10 91q12-16 24 0" stroke="#fff0cf" stroke-width="3"/><path d="M22 107v57m0-42 22-9 18 7m-40 2-17 17" stroke-width="6"/><path d="M22 164 8 211m14-47 16 47" stroke-width="6"/><path d="M4 213h-5m37 0h7" stroke-width="4"/>
+<path d="M2 122q-7 8-2 17m-1-1 13 7" stroke-width="3"/>
+</g>
+<g class="palki-walk delay" transform="translate(480 0)">
+<circle cx="22" cy="93" r="13" fill="#d8b56a"/><path d="M10 91q12-16 24 0" stroke="#fff0cf" stroke-width="3"/><path d="M22 107v57m0-42-22-9-18 7m40 2 17 17" stroke-width="6"/><path d="M22 164 8 211m14-47 16 47" stroke-width="6"/><path d="M4 213h-5m37 0h7" stroke-width="4"/>
+</g>
+<!-- palki carrying poles -->
+<path d="M130 126Q360 117 590 126" stroke="url(#palkiGold)" stroke-width="9"/><path d="M130 126Q360 117 590 126" stroke="#fff0cf" stroke-width="1.4"/>
+<!-- palanquin -->
+<g class="palki-walk">
+<path d="M260 126v-43q100-91 200 0v43" fill="#0d514d" stroke="url(#palkiGold)" stroke-width="4"/>
+<path d="M260 83q100-91 200 0" stroke="#f4d991" stroke-width="5"/>
+<path d="M279 82q81-62 162 0" stroke="#d8b56a" stroke-width="2"/>
+<path d="M250 126h220l-17 53H267z" fill="#0b4142" stroke="url(#palkiGold)" stroke-width="4"/>
+<path d="M263 139h194m-182 25h170" stroke="#e5c77e" stroke-width="2"/>
+<path d="M270 83l-12 26m202-26 12 26" stroke="#e5c77e" stroke-width="2"/>
+<path d="M260 83l-10 14m210-14 10 14" stroke="#d8b56a" stroke-width="3"/>
+<!-- canopy tassels -->
+<g fill="#d8b56a"><path d="M281 91v17l-5 8 5-3 5 3-5-8z"/><path d="M320 67v17l-5 8 5-3 5 3-5-8z"/><path d="M400 67v17l-5 8 5-3 5 3-5-8z"/><path d="M439 91v17l-5 8 5-3 5 3-5-8z"/></g>
+<!-- couple -->
+<circle cx="328" cy="107" r="15" fill="#d8b56a"/><circle cx="389" cy="107" r="15" fill="#d8b56a"/>
+<path d="M312 104q16-22 32 0" stroke="#fff0cf" stroke-width="4"/><path d="M373 104q16-22 32 0" stroke="#fff0cf" stroke-width="4"/>
+<path d="M309 123q19-13 38 0v26h-38z" fill="#8a2635" stroke="#e8c879" stroke-width="2"/>
+<path d="M370 123q19-13 38 0v26h-38z" fill="#d8b56a" stroke="#fff0cf" stroke-width="2"/>
+<path d="M317 130l10 12 10-12m42 0 10 12 10-12" stroke="#f9e7b6" stroke-width="2"/>
+<path d="M359 89v-9m-5 4h10" stroke="#f6e1a6" stroke-width="2"/>
+</g>
+<!-- little bells -->
+<g class="palki-bell" stroke="#e7c77c" stroke-width="2"><path d="M276 104v12m-4-2h8l-4 5z"/></g><g class="palki-bell" stroke="#e7c77c" stroke-width="2"><path d="M444 104v12m-4-2h8l-4 5z"/></g>
+<g fill="#e7c77c"><circle cx="244" cy="125" r="3"/><circle cx="476" cy="125" r="3"/><path d="M360 25l4 8 9 1-7 6 2 9-8-5-8 5 2-9-7-6 9-1z"/></g>
+</g>
+</svg></div><div class="wedding-art ring-art" aria-hidden="true"><svg viewBox="0 0 220 86" width="220" xmlns="http://www.w3.org/2000/svg" fill="none"><circle cx="91" cy="43" r="26" stroke="#d8b56a" stroke-width="5"/><circle cx="129" cy="43" r="26" stroke="#f0dca7" stroke-width="5"/><path d="M110 10l4 7 8 1-6 6 1 8-7-4-7 4 1-8-6-6 8-1 4-7z" fill="#d8b56a"/><path d="M34 43h17m118 0h17" stroke="#d8b56a" stroke-width="1.5" stroke-linecap="round"/><path d="M26 35q8 8 0 16m168-16q-8 8 0 16" stroke="#d8b56a" stroke-width="1.2"/></svg></div><div class="events">
 <section class="event"><div class="icon">❀</div><h2>Reception</h2><p><strong>Saturday, 12 December 2026</strong></p><p>7:30 PM onwards</p></section>
 <section class="event"><div class="icon">🪔</div><h2>Muhurtham</h2><p><strong>Sunday, 13 December 2026</strong></p><p>6:45 AM – 7:30 AM</p></section>
 </div>
