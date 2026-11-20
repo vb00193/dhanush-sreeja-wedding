@@ -37,7 +37,7 @@ body{background:#062d35;color:#e8dfc7}
 .sai-card img{object-position:center 18%}
 .murugan-card img{object-position:center 24%}
 .cover-blessing{font-size:clamp(15px,3vw,19px);letter-spacing:2px;color:#e8d4a0;margin:4px 0 5px}
-.cover-names{font:clamp(48px,10vw,78px)/1.1 'Great Vibes',cursive;color:#f3d58d;text-shadow:0 3px 16px #001a1e;margin:0}
+.cover-names{font:clamp(48px,10vw,78px)/1.1 'Great Vibes',cursive;color:#f8e5b4;text-shadow:0 3px 16px #001a1e;margin:0}
 .cover-names span{font:italic 0.55em 'Cormorant Garamond',Georgia,serif;color:#f9ebca;padding:0 7px}
 .cover-subtitle{font-size:11px;letter-spacing:3px;color:#d9c38e;margin:14px 0 10px}
 .cover-rule{display:flex;align-items:center;justify-content:center;gap:14px;color:#e4c77d;font-size:22px;margin:8px 0}
@@ -66,6 +66,13 @@ body.opened .door-screen{opacity:0;visibility:hidden;pointer-events:none}
 .wishes input,.wishes textarea{background:#f6efd9;border-color:#c9a65f;color:#173c3b}
 .smallprint{color:#cfc3a1}
 @media(max-width:560px){.door-screen{padding:18px}.cover-content{padding:30px 8px}.cover-deities{gap:12px;margin-bottom:18px}.cover-deity{width:clamp(118px,39vw,158px);height:clamp(160px,52vw,215px)}.cover-kicker{margin-bottom:16px}.cover-subtitle{letter-spacing:1.8px}.open-btn{padding:13px 16px;font-size:11px}.cover-date{font-size:10px}}
+
+.cover-names{color:#f8e5b4!important}
+.cover-names span{color:#fff0cf!important}
+.venue-map{width:100%;max-width:620px;margin:18px auto 14px;border:2px solid #d8b56a;padding:5px;background:#0b3438;box-shadow:0 8px 25px #00191c88;border-radius:6px;overflow:hidden}
+.venue-map iframe{display:block;width:100%;height:280px;border:0;border-radius:3px}
+.action-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:18px auto}
+@media(max-width:560px){.venue-map iframe{height:230px}}
 </style></head>
 <body>
 <div class="door-screen" id="doorScreen">
@@ -77,14 +84,14 @@ body.opened .door-screen{opacity:0;visibility:hidden;pointer-events:none}
         <img src="https://static.wixstatic.com/media/dfc843_c336b892f56d4747b0c7f604384feb1c~mv2.png/v1/fill/w_640%2Ch_680%2Cal_c%2Cq_90%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/dfc843_c336b892f56d4747b0c7f604384feb1c~mv2.png" alt="Sri Sathya Sai Baba" loading="eager">
       </figure>
       <figure class="cover-deity murugan-card">
-        <img src="https://maniphotoframe.com/assets/murugan-peacock-DPZ3Nqpm.jpg" alt="Lord Murugan with Vel and peacock" loading="eager">
+        <img src="https://i1.sndcdn.com/artworks-000121188393-a6jzg0-t1080x1080.jpg" alt="Lord Murugan with Vel and peacock" loading="eager">
       </figure>
     </div>
     <div class="cover-blessing">With the divine blessings of</div>
     <div class="cover-names">Dhanush <span>&amp;</span> Sreeja</div>
     <div class="cover-subtitle">A CELEBRATION OF LOVE &amp; TOGETHERNESS</div>
     <div class="cover-rule"><i></i> ❧ <i></i></div>
-    <button class="open-btn" id="openInvite">EXPLORE THE WEDDING INVITATION <span>✦</span></button>
+    <button class="open-btn" id="openInvite">OPEN INVITATION <span>✦</span></button>
     <div class="cover-date">12 &amp; 13 DECEMBER 2026 · PUTTAPARTHI</div>
   </div>
   <div class="cover-ornament cover-ornament-bottom">❧ ✦ ❧</div>
@@ -105,7 +112,8 @@ body.opened .door-screen{opacity:0;visibility:hidden;pointer-events:none}
 <section class="event"><div class="icon">🪔</div><h2>Muhurtham</h2><p><strong>Sunday, 13 December 2026</strong></p><p>6:45 AM – 7:30 AM</p></section>
 </div>
 <div class="divider">❧ ✦ ❧</div><div class="venue-title">Venue</div><div class="venue-name">Sri Sai Aramam Kalyana Mantapam</div><div class="venue-address">Ganesh Circle, Main Road,<br>Puttaparthi, Sri Sathya Sai District, Andhra Pradesh</div>
-<div class="action-row"><a class="action" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Sri+Sai+Aramam+Kalyana+Mantapam%2C+Puttaparthi%2C+Andhra+Pradesh">⌖ Get Directions</a><button class="action" id="shareBtn">↗ Share Invitation</button><button class="action" id="copyBtn">▣ Copy Link</button></div>
+<div class="venue-map" aria-label="Map showing Sri Sai Aramam Kalyana Mantapam"><iframe title="Map to Sri Sai Aramam Kalyana Mantapam, Puttaparthi" src="https://maps.google.com/maps?q=Sri%20Sai%20Aramam%20Kalyana%20Mantapam%2C%20Ganesh%20Circle%2C%20Puttaparthi%2C%20Andhra%20Pradesh&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="280" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+<div class="action-row"><a class="action" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Sri+Sai+Aramam+Kalyana+Mantapam%2C+Puttaparthi%2C+Andhra+Pradesh">⌖ Get Directions</a><button class="action" id="shareBtn">↗ Share Invitation</button></div>
 <div class="countdown" aria-label="Countdown to reception"><div class="timebox"><b id="days">--</b><span>Days</span></div><div class="timebox"><b id="hours">--</b><span>Hours</span></div><div class="timebox"><b id="minutes">--</b><span>Minutes</span></div><div class="timebox"><b id="seconds">--</b><span>Seconds</span></div></div>
 <section class="wishes"><h2>Share Your Best Wishes</h2><input id="guestName" type="text" placeholder="Your name" aria-label="Your name"><textarea id="guestWish" placeholder="Write your wishes for the couple..." aria-label="Your wishes"></textarea><button class="action" id="wishBtn">Send Wishes on WhatsApp</button></section>
 <div class="footer">Your presence will make our celebration more joyful.</div>
@@ -115,6 +123,5 @@ body.opened .door-screen{opacity:0;visibility:hidden;pointer-events:none}
 const openBtn=document.getElementById('openInvite');openBtn.addEventListener('click',()=>{document.body.classList.add('opened');setTimeout(()=>document.getElementById('doorScreen').remove(),1900)});
 function countdown(){const target=new Date('2026-12-12T19:30:00+05:30').getTime();let diff=Math.max(0,target-Date.now());const d=Math.floor(diff/86400000);diff%=86400000;const h=Math.floor(diff/3600000);diff%=3600000;const m=Math.floor(diff/60000);const s=Math.floor((diff%60000)/1000);document.getElementById('days').textContent=d;document.getElementById('hours').textContent=h;document.getElementById('minutes').textContent=m;document.getElementById('seconds').textContent=s}countdown();setInterval(countdown,1000);
 document.getElementById('shareBtn').addEventListener('click',async()=>{const data={title:'Wedding Invitation – Dhanush & Sreeja',text:'You are warmly invited to the wedding of Dhanush & Sreeja on 12–13 December 2026 at Puttaparthi.',url:location.href};if(navigator.share){try{await navigator.share(data)}catch(e){}}else{window.open('https://wa.me/?text='+encodeURIComponent(data.text+' '+data.url),'_blank')}});
-document.getElementById('copyBtn').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(location.href);document.getElementById('copyBtn').textContent='✓ Link Copied'}catch(e){prompt('Copy this invitation link:',location.href)}});
 document.getElementById('wishBtn').addEventListener('click',()=>{const name=document.getElementById('guestName').value.trim();const wish=document.getElementById('guestWish').value.trim();if(!name||!wish){alert('Please enter your name and wishes.');return}const msg=`Wedding wishes for Dhanush & Sreeja\nFrom: ${name}\n${wish}\n\nInvitation: ${location.href}`;window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank')});
 </script></body></html>
