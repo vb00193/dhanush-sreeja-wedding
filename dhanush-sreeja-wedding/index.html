@@ -116,12 +116,6 @@ body.opened .door-screen{opacity:0;visibility:hidden;pointer-events:none}
 }
 
 
-/* Wedding music control */
-.music-toggle{position:fixed;right:18px;bottom:18px;z-index:1000;border:1px solid #c9a45c;background:rgba(24,35,42,.94);color:#f6e6bd;border-radius:999px;padding:11px 16px;font:600 13px Georgia,serif;letter-spacing:.5px;box-shadow:0 4px 18px #0003;cursor:pointer;display:none}
-body.opened .music-toggle{display:block}
-.music-toggle:focus-visible{outline:2px solid #f6e6bd;outline-offset:3px}
-@media(max-width:560px){.music-toggle{right:12px;bottom:12px;padding:10px 13px}}
-
 </style></head>
 <body>
 <div class="gold-rain" id="goldRain" aria-hidden="true"></div>
@@ -169,17 +163,14 @@ body.opened .music-toggle{display:block}
 <div class="footer">Your presence will make our celebration more joyful.</div>
 
 </article></main>
-<audio id="weddingMusic" src="./SK.MP3" preload="auto" loop></audio><button class="music-toggle" id="musicToggle" type="button" aria-label="Turn wedding music on or off">♫ Music: On</button>
+<audio id="weddingMusic" src="./SK.MP3" preload="auto" loop></audio>
 <script>
 
 const goldRain=document.getElementById('goldRain');
 for(let i=0;i<38;i++){const flake=document.createElement('i');flake.className='gold-flake';flake.style.setProperty('--x',(Math.random()*100)+'%');flake.style.setProperty('--size',(2+Math.random()*4)+'px');flake.style.setProperty('--duration',(7+Math.random()*10)+'s');flake.style.setProperty('--delay',(-Math.random()*16)+'s');flake.style.setProperty('--drift',(Math.random()*100-50)+'px');goldRain.appendChild(flake)}
 
-const weddingMusic=document.getElementById('weddingMusic');const musicToggle=document.getElementById('musicToggle');let musicPlaying=false;
-async function startWeddingMusic(){try{await weddingMusic.play();musicPlaying=true;musicToggle.textContent='♫ Music: On';musicToggle.setAttribute('aria-label','Turn wedding music off')}catch(error){musicPlaying=false;musicToggle.textContent='♫ Play Music';musicToggle.setAttribute('aria-label','Play wedding music')}}
-function stopWeddingMusic(){weddingMusic.pause();musicPlaying=false;musicToggle.textContent='♫ Music: Off';musicToggle.setAttribute('aria-label','Play wedding music')}
-const openBtn=document.getElementById('openInvite');openBtn.addEventListener('click',()=>{document.body.classList.add('opened');startWeddingMusic();setTimeout(()=>document.getElementById('doorScreen').remove(),1900)});
-musicToggle.addEventListener('click',()=>{if(musicPlaying){stopWeddingMusic()}else{startWeddingMusic()}});
+const weddingMusic=document.getElementById('weddingMusic');
+const openBtn=document.getElementById('openInvite');openBtn.addEventListener('click',()=>{document.body.classList.add('opened');weddingMusic.play().catch(()=>{});setTimeout(()=>document.getElementById('doorScreen').remove(),1900)});
 function countdown(){const target=new Date('2026-12-12T19:30:00+05:30').getTime();let diff=Math.max(0,target-Date.now());const d=Math.floor(diff/86400000);diff%=86400000;const h=Math.floor(diff/3600000);diff%=3600000;const m=Math.floor(diff/60000);const s=Math.floor((diff%60000)/1000);document.getElementById('days').textContent=d;document.getElementById('hours').textContent=h;document.getElementById('minutes').textContent=m;document.getElementById('seconds').textContent=s}countdown();setInterval(countdown,1000);
 document.getElementById('wishBtn').addEventListener('click',()=>{const name=document.getElementById('guestName').value.trim();const wish=document.getElementById('guestWish').value.trim();if(!name||!wish){alert('Please enter your name and wishes.');return}const msg=`Wedding wishes for Dhanush & Sreeja\nFrom: ${name}\n${wish}\n\nInvitation: ${location.href}`;window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank')});
 </script></body></html>
