@@ -116,6 +116,17 @@ body.opened .door-screen{opacity:0;visibility:hidden;pointer-events:none}
 }
 
 
+
+/* Delicate wedding line-art accents */
+.wedding-art{color:#d8b56a;pointer-events:none;display:flex;justify-content:center;align-items:center;margin:8px auto 14px;opacity:.92}
+.wedding-art svg{display:block;width:min(100%,390px);height:auto;overflow:visible;filter:drop-shadow(0 2px 5px #001b1d66)}
+.floral-arch{animation:artReveal 1.8s ease both,artSway 7s ease-in-out 1.8s infinite;transform-origin:50% 80%}
+.ring-art{margin:12px auto 4px;animation:artReveal 1.5s .35s both,ringFloat 5s ease-in-out 1.85s infinite}
+.footer-art{margin:18px auto 0;animation:artReveal 1.5s .6s both}
+@keyframes artReveal{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:.92;transform:translateY(0) scale(1)}}
+@keyframes artSway{0%,100%{transform:rotate(-.7deg)}50%{transform:rotate(.7deg)}}
+@keyframes ringFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@media(prefers-reduced-motion:reduce){.floral-arch,.ring-art,.footer-art{animation:none;opacity:.9}}
 </style></head>
 <body>
 <div class="gold-rain" id="goldRain" aria-hidden="true"></div>
@@ -140,7 +151,7 @@ body.opened .door-screen{opacity:0;visibility:hidden;pointer-events:none}
   </div>
   <div class="cover-ornament cover-ornament-bottom">❧ ✦ ❧</div>
 </div><main class="page"><div class="petals"><i class="petal"></i><i class="petal"></i><i class="petal"></i><i class="petal"></i><i class="petal"></i></div>
-<article class="invite">
+<article class="invite"><div class="wedding-art floral-arch" aria-hidden="true"><svg viewBox="0 0 420 118" role="presentation" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 105C54 15 125 12 210 12S366 15 396 105" stroke="currentColor" stroke-width="1.7"/><path d="M43 88C77 54 100 47 128 47M292 47C320 47 343 54 377 88" stroke="currentColor" stroke-width="1.2"/><path d="M210 12v23m-10-12 10 12 10-12" stroke="currentColor" stroke-width="1.3"/><g fill="#d8b56a" stroke="currentColor" stroke-width="1"><circle cx="72" cy="57" r="4"/><circle cx="104" cy="39" r="3"/><circle cx="348" cy="57" r="4"/><circle cx="316" cy="39" r="3"/><circle cx="210" cy="49" r="3.5"/></g><g stroke="currentColor" stroke-width="1.1"><path d="M72 57c-15-15-23 3 0 0 15-15 23 3 0 0zm32-18c-12-12-18 2 0 0 12-12 18 2 0 0zm244 18c15-15 23 3 0 0-15-15-23 3 0 0zm-32-18c12-12 18 2 0 0-12-12-18 2 0 0zM210 49c-13-13-20 3 0 0 13-13 20 3 0 0z"/></g><path d="M24 105q12-14 23 0m349 0q-12-14-23 0" stroke="currentColor" stroke-width="1.5"/></svg></div>
 <div class="invocation">|| Sri Lakshmi Venkateswara Swamy Prasanna ||</div><div class="divider">❧ ✦ ❧</div>
 <div class="script">Wedding Invitation</div>
 <div class="sub">With the blessings of</div><div class="blessing">Smt. Late R. Vijayamma &amp; Sri Late R. Janardhan Babu</div>
@@ -151,14 +162,14 @@ body.opened .door-screen{opacity:0;visibility:hidden;pointer-events:none}
 <div class="with">with</div>
 <div class="person-name"><div class="name-prefix">Chi. La Sow.</div><div class="couple-names">K. Sreeja</div><div class="qualification">B.Sc., Nursing</div></div>
 <div class="with">Daughter of</div><div class="bride-parents">Smt. K. Shivamma &amp; Sri K. Chanakeshava</div>
-<div class="events">
+<div class="wedding-art ring-art" aria-hidden="true"><svg viewBox="0 0 220 86" width="220" xmlns="http://www.w3.org/2000/svg" fill="none"><circle cx="91" cy="43" r="26" stroke="#d8b56a" stroke-width="5"/><circle cx="129" cy="43" r="26" stroke="#f0dca7" stroke-width="5"/><path d="M110 10l4 7 8 1-6 6 1 8-7-4-7 4 1-8-6-6 8-1 4-7z" fill="#d8b56a"/><path d="M34 43h17m118 0h17" stroke="#d8b56a" stroke-width="1.5" stroke-linecap="round"/><path d="M26 35q8 8 0 16m168-16q-8 8 0 16" stroke="#d8b56a" stroke-width="1.2"/></svg></div><div class="events">
 <section class="event"><div class="icon">❀</div><h2>Reception</h2><p><strong>Saturday, 12 December 2026</strong></p><p>7:30 PM onwards</p></section>
 <section class="event"><div class="icon">🪔</div><h2>Muhurtham</h2><p><strong>Sunday, 13 December 2026</strong></p><p>6:45 AM – 7:30 AM</p></section>
 </div>
 <div class="divider">❧ ✦ ❧</div><div class="venue-title">Venue</div><div class="venue-name">Sri Sai Aramam Kalyana Mantapam</div><div class="venue-address">Ganesh Circle, Main Road,<br>Puttaparthi, Sri Sathya Sai District, Andhra Pradesh</div>
 <div class="venue-map"><iframe title="Map to Sri Sai Aramam Kalyana Mantapam" src="https://www.google.com/maps?q=Sri+Sai+Aramam+Kalyana+Mantapam,+Ganesh+Circle,+Main+Road,+Puttaparthi&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div><div class="action-row"><a class="action" target="_blank" rel="noopener" href="https://maps.app.goo.gl/xfcFwcziUmMUSZGS9">⌖ Click Here for Location / Directions</a></div>
 <div class="countdown" aria-label="Countdown to reception"><div class="timebox"><b id="days">--</b><span>Days</span></div><div class="timebox"><b id="hours">--</b><span>Hours</span></div><div class="timebox"><b id="minutes">--</b><span>Minutes</span></div><div class="timebox"><b id="seconds">--</b><span>Seconds</span></div></div>
-<div class="footer">Your presence will make our celebration more joyful.</div>
+<div class="footer">Your presence will make our celebration more joyful.</div><div class="wedding-art footer-art" aria-hidden="true"><svg viewBox="0 0 240 48" width="240" xmlns="http://www.w3.org/2000/svg" fill="none"><path d="M8 24h70m84 0h70" stroke="#d8b56a" stroke-width="1.3"/><path d="M120 7c-19 9-19 25 0 34 19-9 19-25 0-34z" stroke="#d8b56a" stroke-width="1.5"/><path d="M120 11v26m-14-13h28" stroke="#d8b56a" stroke-width="1"/><circle cx="92" cy="24" r="3" fill="#d8b56a"/><circle cx="148" cy="24" r="3" fill="#d8b56a"/></svg></div>
 
 </article></main>
 <audio id="weddingMusic" src="./SK.MP3" preload="auto" loop></audio>
