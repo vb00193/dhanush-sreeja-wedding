@@ -79,12 +79,24 @@ body.opened .door-screen{opacity:0;visibility:hidden;pointer-events:none}
 .venue-map iframe{display:block;width:100%;height:280px;border:0;border-radius:3px}
 .action-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:18px auto}
 @media(max-width:560px){.venue-map iframe{height:230px}}
+
+/* Soft golden shimmer falling across both invitation screens */
+.gold-rain{position:fixed;inset:0;z-index:30;pointer-events:none;overflow:hidden}
+.gold-flake{position:absolute;top:-18px;left:var(--x);width:var(--size);height:var(--size);border-radius:50%;background:radial-gradient(circle,#fff6c7 0 18%,#f5d477 42%,#c18a32 75%,transparent 100%);opacity:0;filter:drop-shadow(0 0 4px #f5d477aa);animation:goldFall var(--duration) linear var(--delay) infinite}
+.gold-flake:nth-child(3n){border-radius:1px;transform:rotate(45deg)}
+@keyframes goldFall{0%{transform:translate3d(0,-4vh,0) rotate(0deg);opacity:0}8%{opacity:.85}55%{opacity:.72}100%{transform:translate3d(var(--drift),108vh,0) rotate(540deg);opacity:0}}
+.cover-kicker{font-size:clamp(16px,3vw,21px);letter-spacing:4px;font-weight:700;color:#f1d58e;margin:2px 0 12px}
+.cover-blessing{font-size:clamp(16px,3vw,20px);letter-spacing:1.5px;color:#f5e4b8;margin:0 auto 16px}
+@media(prefers-reduced-motion:reduce){.gold-flake{animation-duration:30s;opacity:.25}}
+
 </style></head>
 <body>
+<div class="gold-rain" id="goldRain" aria-hidden="true"></div>
 <div class="door-screen" id="doorScreen">
   <div class="cover-ornament cover-ornament-top">✦ ❧ ✦</div>
   <div class="cover-content">
-    <div class="cover-kicker">AN AUSPICIOUS BEGINNING</div>
+    <div class="cover-kicker">WEDDING INVITATION</div>
+    <div class="cover-blessing">With the divine blessings of</div>
     <div class="cover-deities">
       <figure class="cover-deity sai-card">
         <img src="https://static.wixstatic.com/media/dfc843_c336b892f56d4747b0c7f604384feb1c~mv2.png/v1/fill/w_640%2Ch_680%2Cal_c%2Cq_90%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/dfc843_c336b892f56d4747b0c7f604384feb1c~mv2.png" alt="Sri Sathya Sai Baba" loading="eager">
@@ -93,7 +105,6 @@ body.opened .door-screen{opacity:0;visibility:hidden;pointer-events:none}
         <img src="https://i1.sndcdn.com/artworks-000121188393-a6jzg0-t1080x1080.jpg" alt="Lord Murugan with Vel and peacock" loading="eager">
       </figure>
     </div>
-    <div class="cover-blessing">With the divine blessings of</div>
     <div class="cover-names">Dhanush <span>&amp;</span> Sreeja</div>
     <div class="cover-subtitle">A CELEBRATION OF LOVE &amp; TOGETHERNESS</div>
     <div class="cover-rule"><i></i> ❧ <i></i></div>
@@ -126,6 +137,10 @@ body.opened .door-screen{opacity:0;visibility:hidden;pointer-events:none}
 
 </article></main>
 <script>
+
+const goldRain=document.getElementById('goldRain');
+for(let i=0;i<38;i++){const flake=document.createElement('i');flake.className='gold-flake';flake.style.setProperty('--x',(Math.random()*100)+'%');flake.style.setProperty('--size',(2+Math.random()*4)+'px');flake.style.setProperty('--duration',(7+Math.random()*10)+'s');flake.style.setProperty('--delay',(-Math.random()*16)+'s');flake.style.setProperty('--drift',(Math.random()*100-50)+'px');goldRain.appendChild(flake)}
+
 const openBtn=document.getElementById('openInvite');openBtn.addEventListener('click',()=>{document.body.classList.add('opened');setTimeout(()=>document.getElementById('doorScreen').remove(),1900)});
 function countdown(){const target=new Date('2026-12-12T19:30:00+05:30').getTime();let diff=Math.max(0,target-Date.now());const d=Math.floor(diff/86400000);diff%=86400000;const h=Math.floor(diff/3600000);diff%=3600000;const m=Math.floor(diff/60000);const s=Math.floor((diff%60000)/1000);document.getElementById('days').textContent=d;document.getElementById('hours').textContent=h;document.getElementById('minutes').textContent=m;document.getElementById('seconds').textContent=s}countdown();setInterval(countdown,1000);
 document.getElementById('wishBtn').addEventListener('click',()=>{const name=document.getElementById('guestName').value.trim();const wish=document.getElementById('guestWish').value.trim();if(!name||!wish){alert('Please enter your name and wishes.');return}const msg=`Wedding wishes for Dhanush & Sreeja\nFrom: ${name}\n${wish}\n\nInvitation: ${location.href}`;window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank')});
