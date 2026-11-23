@@ -132,9 +132,12 @@ body.opened .door-screen{opacity:0;visibility:hidden;pointer-events:none}
 
 
 /* Full-width ceremonial artwork using the newly uploaded PNG */
-.ring-art{display:block;width:164px;max-width:42%;margin:10px auto 8px;padding:0;box-sizing:border-box;animation:artReveal 1.2s .25s both}
-.ring-art img{display:block;width:100%;height:auto;max-height:116px;object-fit:contain;margin:0 auto;padding:0;filter:drop-shadow(0 3px 5px #4a251b1c)}
+.ring-art{display:block;width:164px;max-width:42%;margin:10px auto 8px;padding:0;box-sizing:border-box;animation:artReveal 1.2s .25s both,heartDrift 4.8s ease-in-out 1.5s infinite}
+.ring-art img{display:block;width:100%;height:auto;max-height:116px;object-fit:contain;margin:0 auto;padding:0;filter:drop-shadow(0 3px 5px #4a251b1c);transform-origin:50% 55%;animation:heartPulse 3.8s ease-in-out 1.5s infinite}
+@keyframes heartDrift{0%,100%{translate:0 0}50%{translate:0 -3px}}
+@keyframes heartPulse{0%,100%{scale:1}50%{scale:1.035}}
 @media(max-width:560px){.ring-art{width:138px;max-width:40%;margin:8px auto 6px}.ring-art img{max-height:98px}}
+@media(prefers-reduced-motion:reduce){.ring-art,.ring-art img{animation:none!important}}
 
 /* Delicate wedding line-art accents */
 .wedding-art{color:#d8b56a;pointer-events:none;display:flex;justify-content:center;align-items:center;margin:8px auto 14px;opacity:.92}
