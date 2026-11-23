@@ -147,6 +147,35 @@ body.opened .door-screen{opacity:0;visibility:hidden;pointer-events:none}
 .deity-emblem img{width:100%;height:auto;max-height:210px;object-fit:contain;display:block;filter:drop-shadow(0 4px 8px #00191c88)}
 @media(max-width:560px){.deity-emblem{width:min(360px,94vw);margin-bottom:5px}}
 @media(prefers-reduced-motion:reduce){.deity-emblem{animation:none}}
+
+/* Refined opening-cover spacing and separation between blessings and names */
+.cover-kicker{margin-bottom:24px;line-height:1.7}
+.cover-blessing{margin:0 auto 22px;line-height:1.6}
+.cover-deities{margin-bottom:0}
+.cover-name-separator{color:#e4c77d;font-size:19px;letter-spacing:3px;line-height:1;margin:20px auto 17px;text-shadow:0 2px 10px #001a1e}
+.cover-names{line-height:1.18;margin:0 auto 10px}
+.cover-subtitle{line-height:1.7;margin:15px auto 13px}
+.cover-rule{margin:12px auto}
+.open-btn{margin-top:12px}
+.cover-date{line-height:1.7;margin-top:15px}
+@media(max-width:560px){
+  .cover-kicker{margin-bottom:12px;line-height:1.6}
+  .cover-blessing{margin-bottom:13px;line-height:1.5}
+  .cover-deities{margin-bottom:0}
+  .cover-name-separator{font-size:16px;margin:12px auto 11px}
+  .cover-names{line-height:1.12;margin-bottom:7px}
+  .cover-subtitle{line-height:1.5;margin:10px auto 8px}
+  .cover-rule{margin:7px auto}
+  .open-btn{margin-top:8px}
+  .cover-date{line-height:1.5;margin-top:10px}
+}
+@media(max-width:560px) and (max-height:650px){
+  .cover-kicker{margin-bottom:7px}
+  .cover-blessing{margin-bottom:8px}
+  .cover-name-separator{margin:7px auto}
+  .cover-subtitle{margin:7px auto 5px}
+  .cover-date{margin-top:7px}
+}
 </style>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-D8SCXGZLR0"></script>
@@ -172,6 +201,7 @@ body.opened .door-screen{opacity:0;visibility:hidden;pointer-events:none}
         <img src="https://i1.sndcdn.com/artworks-000121188393-a6jzg0-t1080x1080.jpg" alt="Lord Murugan with Vel and peacock" loading="eager">
       </figure>
     </div>
+    <div class="cover-name-separator" aria-hidden="true">✦ &nbsp; ❧ &nbsp; ✦</div>
     <div class="cover-names">Dhanush <span>&amp;</span> Sreeja</div>
     <div class="cover-subtitle">A CELEBRATION OF LOVE &amp; TOGETHERNESS</div>
     <div class="cover-rule"><i></i> ❧ <i></i></div>
